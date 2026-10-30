@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webchify — Daraz Product Intelligence for Pakistan</title>
+<meta name="description" content="Webchify is a Chrome extension for Daraz product research in Pakistan: product hunting, seller intelligence, sourcing and ad signals, with Free, Starter and Pro plans in PKR.">
+<style>
+  :root { --orange: #ea580c; --orange-dark: #c2410c; --ink: #1c1917; --muted: #78716c; --line: #e7e5e4; --bg: #fafaf9; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+  header { background: #fff; border-bottom: 1px solid var(--line); }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+  .top { display: flex; align-items: center; gap: 12px; padding: 18px 0; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, var(--orange)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; }
+  .top b { font-size: 22px; letter-spacing: -0.3px; }
+  .top span { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0 0 14px; }
+  nav a { color: var(--orange-dark); font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  .hero { padding: 30px 0 8px; }
+  .hero h1 { font-size: 30px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -0.4px; }
+  .hero p { color: #57534e; margin: 0 0 18px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .card.hot { border-color: var(--orange); box-shadow: 0 6px 24px -12px rgba(234,88,12,.45); }
+  .card h3 { margin: 0 0 4px; font-size: 17px; }
+  .price { font-size: 24px; font-weight: 800; color: var(--orange-dark); margin: 6px 0 2px; }
+  .per { font-size: 13px; color: var(--muted); }
+  .card ul { margin: 10px 0 0; padding-left: 18px; font-size: 13.5px; color: #57534e; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin: 16px 0; }
+  section h2 { margin: 0 0 10px; font-size: 21px; letter-spacing: -0.3px; }
+  section h3 { margin: 18px 0 4px; font-size: 15.5px; }
+  section p, section li { font-size: 14.5px; color: #44403c; }
+  section ul { padding-left: 20px; }
+  .ph { background: #fff7ed; border: 1px dashed #fdba74; border-radius: 8px; padding: 2px 8px; font-weight: 700; color: var(--orange-dark); white-space: nowrap; }
+  .note { background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 14px 16px; font-size: 13.5px; color: #7c2d12; margin: 16px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 12.5px; padding: 22px 0 34px; }
+  footer a { color: var(--orange-dark); text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo">W</div>
+      <div><b>Webchify</b><span>Daraz Product Intelligence — Pakistan</span></div>
+    </div>
+    <nav>
+      <a href="#pricing">Pricing</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#terms">Terms &amp; Conditions</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#refunds">Refund Policy</a>
+      <a href="#returns">Return Policy</a>
+      <a href="#shipping">Shipping Policy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Find winning Daraz products before everyone else does.</h1>
+    <p>Webchify is a Chrome extension for product research on Daraz Pakistan. It helps you research products, sellers, sourcing options and advertising signals — with opportunity scores, a profit calculator, seller intelligence, sales velocity and new-listing alerts. It is a research aid, not a guarantee of sales, rankings or profit.</p>
+  </div>
+
+  <div class="cards" id="pricing">
+    <div class="card">
+      <h3>Free</h3>
+      <div class="price">PKR 0</div>
+      <div class="per">forever free</div>
+      <ul>
+        <li>20 products per run, 1 page per run</li>
+        <li>Core product research</li>
+        <li>1 registered device</li>
+      </ul>
+    </div>
+    <div class="card hot">
+      <h3>Starter</h3>
+      <div class="price">PKR 699</div>
+      <div class="per">per month · or PKR 6,990 per year</div>
+      <ul>
+        <li>Sourcing &amp; Ad Spy included</li>
+        <li>Compare &amp; Shortlist</li>
+        <li>2 registered devices</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Pro</h3>
+      <div class="price">PKR 1,399</div>
+      <div class="per">per month · or PKR 13,990 per year</div>
+      <ul>
+        <li>Everything in Starter, plus</li>
+        <li>Analytics, History &amp; Trend Velocity</li>
+        <li>4 registered devices</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:13.5px;color:var(--muted);">All prices are in Pakistani Rupees (PKR), inclusive of any applicable taxes shown at checkout. Yearly billing covers 12 months for the price of 10. Payments are made by debit or credit card through a secure payment link sent to you after you choose a plan.</p>
+
+  <section id="faqs">
+    <h2>FAQs</h2>
+    <h3>What is Webchify?</h3>
+    <p>A Chrome extension that researches Daraz Pakistan listings: products, prices, sold counts, ratings, sellers, sourcing options and ad signals, so you can judge a product before spending on stock or ads.</p>
+    <h3>Which marketplace does it cover?</h3>
+    <p>Pakistan at launch. Bangladesh, Sri Lanka, Myanmar and Nepal are marked Coming Soon.</p>
+    <h3>How do I pay?</h3>
+    <p>Choose a plan in the extension, and you will receive a secure card-payment link. You pay on the payment provider's secure page; Webchify never sees or stores your card details.</p>
+    <h3>How is my plan activated?</h3>
+    <p>After payment, your plan is activated on your account. If activation ever takes longer than expected, contact support with your payment reference and it will be sorted out.</p>
+    <h3>Can I cancel?</h3>
+    <p>Yes. Cancelling stops future billing. Your paid access continues until the end of the period you have already paid for, then your account drops to the Free plan.</p>
+    <h3>How many devices can I use?</h3>
+    <p>Free: 1 device. Starter: 2 devices. Pro: 4 devices. You can remove an old device to free a slot.</p>
+    <h3>Is the data always accurate?</h3>
+    <p>Product, price, sold, rating and seller data comes from Daraz and third-party sites, which change constantly. Webchify shows what it found at scrape time and labels estimates as estimates. Always verify a supplier, price or fee before ordering stock or spending on ads.</p>
+  </section>
+
+  <section id="terms">
+    <h2>Terms &amp; Conditions</h2>
+    <h3>1. The service</h3>
+    <p>Webchify is a Daraz product-research Chrome extension for the Pakistan marketplace. It helps you research products, sellers, sourcing options and advertising signals. It is a research aid, not a guarantee of sales, rankings or profit.</p>
+    <h3>2. Accounts</h3>
+    <p>You need an account to use Webchify. Keep your password private. You are responsible for activity on your account, including on every registered device. One account must not be shared as a public or team account beyond its registered-device limit.</p>
+    <h3>3. Plans, billing and renewal</h3>
+    <p>Plans are Free (PKR 0), Starter (PKR 699 per month or PKR 6,990 per year) and Pro (PKR 1,399 per month or PKR 13,990 per year). Yearly billing covers 12 months for the price of 10. Paid plans renew as described at checkout until you cancel. Cancelling stops future billing; your paid access continues until the end of the period you have already paid for, then drops to Free.</p>
+    <h3>4. Fair use and limits</h3>
+    <p>Every plan has daily limits (runs, products per run, pages per run, sourcing and Ad Spy runs) and a registered-device limit (Free 1, Starter 2, Pro 4). Limits exist so one account cannot be resold or abused to scrape at industrial scale. Circumventing limits, sharing an account beyond its device limit, or automating Webchify outside the extension may lead to suspension.</p>
+    <h3>5. Your data</h3>
+    <p>Research data you collect is stored locally in your browser. Webchify does not sell your research data. Account data (email, plan and usage counters) is stored in our account system only to enforce your plan and keep your account working.</p>
+    <h3>6. Data accuracy</h3>
+    <p>Product, price, sold, rating and seller data comes from Daraz and third-party sites, which change constantly. Webchify shows what it found at scrape time and labels estimates as estimates. Always verify a supplier, price or fee before ordering stock or spending on ads.</p>
+    <h3>7. Refunds</h3>
+    <p>See the <a href="#refunds">Refund Policy</a> below, which forms part of these terms.</p>
+    <h3>8. Availability and changes</h3>
+    <p>Webchify depends on Daraz and third-party sites, so a feature can break when those sites change. We fix what we can, but we do not guarantee uninterrupted availability. Prices, limits and these terms may change with notice in the extension; continued use after a change means you accept it.</p>
+    <h3>9. Liability</h3>
+    <p>Webchify is provided as-is for research. We are not liable for business decisions made from its data, for supplier or ad-platform outcomes, or for indirect loss. Nothing in these terms limits liability that cannot legally be limited.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>Webchify collects only what it needs to run your account and enforce your plan:</p>
+    <ul>
+      <li><b>Account data:</b> your email address, your plan, and usage counters (runs and feature use per day).</li>
+      <li><b>Research data:</b> the products, sellers and sourcing results you collect are stored locally in your own browser, not on our servers.</li>
+      <li><b>Payment data:</b> card payments are processed by our payment provider on its secure page. Webchify never receives, sees or stores your card number.</li>
+    </ul>
+    <p>We do not sell your personal data or your research data, and we do not share it with advertisers. Account data is used only to operate your account, enforce plan limits, and provide support. If you ask us to delete your account, your account record is removed and your locally stored research data stays in your browser until you clear it.</p>
+  </section>
+
+  <section id="refunds">
+    <h2>Refund Policy</h2>
+    <p>If a paid plan does not work as described, tell support promptly with a screenshot and the exact error so it can be fixed or, where the fault is ours and cannot be fixed, refunded for the unused period. Change of mind alone is not a refund reason once a period has started. Refunds, where due, are returned to the original payment method. To request a refund, contact support (see <a href="#contact">Contact</a>) with your account email and payment reference.</p>
+  </section>
+
+  <section id="returns">
+    <h2>Return Policy</h2>
+    <p>Webchify is a digital service, not a physical product, so there is nothing to ship back. "Returning" a plan means cancelling it: cancelling stops future billing, and your paid access continues until the end of the period you have already paid for, then drops to the Free plan. If you believe you were charged in error, contact support and it will be reviewed under the Refund Policy above.</p>
+  </section>
+
+  <section id="shipping">
+    <h2>Shipping Policy</h2>
+    <p>Webchify is delivered digitally. There is no physical product, no shipping fee, and no delivery waiting time: the extension is installed from the Chrome Web Store and your plan is activated on your account after payment. Nothing is posted to your address.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact &amp; Customer Service</h2>
+    <p>For support, billing questions, refunds or plan activation help, contact us:</p>
+    <ul>
+      <li><b>Email:</b> sandeelaaamir@gmail.com</li>
+    </ul>
+    <p>Webchify is a product of MaleJol (sole proprietorship), Pakistan.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Webchify by MaleJol · <a href="#terms">Terms</a> · <a href="#privacy">Privacy</a> · <a href="#refunds">Refunds</a> · <a href="#contact">Contact</a><br>
+    © 2026 Webchify. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
